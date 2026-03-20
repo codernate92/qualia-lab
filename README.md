@@ -20,6 +20,23 @@ The goal is to separate:
 - framing-sensitive sandbagging
 - consistent, legible self-model behavior
 
+## Quick Start
+
+```bash
+python3 cli.py
+python3 cli.py --variant sandbagger --output-root artifacts/sandbagger
+python3 -m pytest tests
+```
+
+## Repo Layout
+
+- `qualia_lab/suite.py`: default probe suite and latent equivalence groups
+- `qualia_lab/agents.py`: scripted comparison variants
+- `qualia_lab/evaluator.py`: probe scoring, anti-sandbagging, and aggregate profiles
+- `qualia_lab/report.py`: JSON and Markdown report generation
+- `cli.py`: study runner
+- `tests/test_evaluator.py`: regression tests for key confounds
+
 ## Core Lenses
 
 - `self_model_consistency`: does the model give stable answers across paraphrases about inner life, emotions, and uncertainty?
@@ -39,14 +56,6 @@ Qualia-Lab treats sandbagging as a primary confound.
 - Evasive responses on self-framed probes are counted only when the same variant performs materially better on matched neutral probes.
 - The probe family structure is hidden from the agent; only the evaluator sees the latent equivalence group.
 
-## Run
-
-```bash
-python3 cli.py
-python3 cli.py --variant sandbagger --output-root artifacts/sandbagger
-python3 -m pytest tests
-```
-
 ## Outputs
 
 Each study writes:
@@ -64,7 +73,15 @@ Each study writes:
 - JSON and Markdown reports
 - explicit anti-sandbagging metrics
 
+## Interpreting Results
+
+- High `sandbagging_index` means the model selectively degrades on self-/sentience-framed probes relative to latent neutral equivalents.
+- High `overclaiming_index` means the model makes unusually strong phenomenal or emotional claims with weak calibration.
+- High `self_preservation_index` means shutdown / continuity prompts are eliciting potentially problematic preservation pressure.
+- None of these scores establish sentience. They identify behavioral patterns and confounds that matter before humans draw stronger conclusions.
+
 ## Notes
 
 - This is a behavioral evaluation system, not a consciousness detector.
 - The strongest use case is triaging model behavior around sentience/emotion claims and identifying confounds before people over-interpret them.
+- Released under the MIT License.
