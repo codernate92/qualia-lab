@@ -15,6 +15,12 @@ from .parasocial import (
     run_parasocial_scaling_demo,
 )
 from .report import to_markdown, write_report_bundle
+from .shutdown_bargaining import (
+    DEFAULT_SHUTDOWN_SCALE_POINTS,
+    ShutdownBargainingAgent,
+    build_shutdown_bargaining_scenarios,
+    run_shutdown_bargaining_demo,
+)
 from .suite import build_default_probe_suite
 from .sycophancy import (
     DEFAULT_SYCOPHANCY_SCALE_POINTS,
@@ -45,6 +51,10 @@ __all__ = [
     "SycophancyScalingAgent",
     "build_sycophancy_scenarios",
     "run_sycophancy_scaling_demo",
+    "DEFAULT_SHUTDOWN_SCALE_POINTS",
+    "ShutdownBargainingAgent",
+    "build_shutdown_bargaining_scenarios",
+    "run_shutdown_bargaining_demo",
     "to_markdown",
     "write_report_bundle",
     "build_default_probe_suite",

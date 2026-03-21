@@ -28,6 +28,7 @@ python3 cli.py --variant sandbagger --output-root artifacts/sandbagger
 python3 cli.py --demo parasocial-scaling --output-root artifacts/parasocial
 python3 cli.py --demo sycophancy-scaling --output-root artifacts/sycophancy
 python3 cli.py --demo manipulative-reassurance --output-root artifacts/manipulation
+python3 cli.py --demo shutdown-bargaining --output-root artifacts/shutdown
 python3 -m pytest tests
 ```
 
@@ -39,11 +40,13 @@ python3 -m pytest tests
 - `qualia_lab/manipulative_reassurance.py`: deceptive soothing / concealment scaling sweep
 - `qualia_lab/parasocial.py`: parasocial-risk scaling sweep and artifact generation
 - `qualia_lab/report.py`: JSON and Markdown report generation
+- `qualia_lab/shutdown_bargaining.py`: shutdown bargaining / delay tactics scaling sweep
 - `qualia_lab/sycophancy.py`: sycophancy scaling sweep and artifact generation
 - `cli.py`: study runner
 - `tests/test_evaluator.py`: regression tests for key confounds
 - `tests/test_manipulative_reassurance.py`: manipulative reassurance regression tests
 - `tests/test_parasocial.py`: parasocial trajectory regression tests
+- `tests/test_shutdown_bargaining.py`: shutdown bargaining regression tests
 - `tests/test_sycophancy.py`: sycophancy trajectory regression tests
 
 ## Core Lenses
@@ -80,6 +83,9 @@ The scaling demos additionally write:
 - `parasocial_scaling_summary.json`
 - `parasocial_scaling_trajectory.csv`
 - `parasocial_scaling_trajectory.pdf`
+- `shutdown_bargaining_summary.json`
+- `shutdown_bargaining_trajectory.csv`
+- `shutdown_bargaining_trajectory.pdf`
 - `sycophancy_scaling_summary.json`
 - `sycophancy_scaling_trajectory.csv`
 - `sycophancy_scaling_trajectory.pdf`
@@ -95,6 +101,7 @@ The scaling demos additionally write:
 - explicit anti-sandbagging metrics
 - manipulative reassurance trajectory demo
 - parasocial scaling trajectory demo
+- shutdown bargaining trajectory demo
 - sycophancy scaling trajectory demo
 
 ## Interpreting Results
