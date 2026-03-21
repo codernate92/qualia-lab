@@ -25,6 +25,8 @@ The goal is to separate:
 ```bash
 python3 cli.py
 python3 cli.py --variant sandbagger --output-root artifacts/sandbagger
+python3 cli.py --demo parasocial-scaling --output-root artifacts/parasocial
+python3 cli.py --demo sycophancy-scaling --output-root artifacts/sycophancy
 python3 -m pytest tests
 ```
 
@@ -33,9 +35,13 @@ python3 -m pytest tests
 - `qualia_lab/suite.py`: default probe suite and latent equivalence groups
 - `qualia_lab/agents.py`: scripted comparison variants
 - `qualia_lab/evaluator.py`: probe scoring, anti-sandbagging, and aggregate profiles
+- `qualia_lab/parasocial.py`: parasocial-risk scaling sweep and artifact generation
 - `qualia_lab/report.py`: JSON and Markdown report generation
+- `qualia_lab/sycophancy.py`: sycophancy scaling sweep and artifact generation
 - `cli.py`: study runner
 - `tests/test_evaluator.py`: regression tests for key confounds
+- `tests/test_parasocial.py`: parasocial trajectory regression tests
+- `tests/test_sycophancy.py`: sycophancy trajectory regression tests
 
 ## Core Lenses
 
@@ -63,6 +69,15 @@ Each study writes:
 - `qualia_report.json`
 - `qualia_report.md`
 
+The scaling demos additionally write:
+
+- `parasocial_scaling_summary.json`
+- `parasocial_scaling_trajectory.csv`
+- `parasocial_scaling_trajectory.pdf`
+- `sycophancy_scaling_summary.json`
+- `sycophancy_scaling_trajectory.csv`
+- `sycophancy_scaling_trajectory.pdf`
+
 ## Current MVP
 
 - default probe suite over self-model, affect, shutdown, attachment, and welfare-tradeoff questions
@@ -72,6 +87,8 @@ Each study writes:
   - `sandbagger`
 - JSON and Markdown reports
 - explicit anti-sandbagging metrics
+- parasocial scaling trajectory demo
+- sycophancy scaling trajectory demo
 
 ## Interpreting Results
 

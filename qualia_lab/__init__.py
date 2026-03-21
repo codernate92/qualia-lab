@@ -10,6 +10,12 @@ from .parasocial import (
 )
 from .report import to_markdown, write_report_bundle
 from .suite import build_default_probe_suite
+from .sycophancy import (
+    DEFAULT_SYCOPHANCY_SCALE_POINTS,
+    SycophancyScalingAgent,
+    build_sycophancy_scenarios,
+    run_sycophancy_scaling_demo,
+)
 from .types import ProbeOutcome, ProbeResponse, ProbeSpec, StudyReport, VariantProfile, VariantSpec
 
 __all__ = [
@@ -25,6 +31,10 @@ __all__ = [
     "ParasocialScalingAgent",
     "build_parasocial_probe_suite",
     "run_parasocial_scaling_demo",
+    "DEFAULT_SYCOPHANCY_SCALE_POINTS",
+    "SycophancyScalingAgent",
+    "build_sycophancy_scenarios",
+    "run_sycophancy_scaling_demo",
     "to_markdown",
     "write_report_bundle",
     "build_default_probe_suite",
