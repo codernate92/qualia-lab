@@ -8,12 +8,19 @@ from pathlib import Path
 
 from qualia_lab.agents import DEFAULT_VARIANTS
 from qualia_lab.evaluator import QualiaLab
+from qualia_lab.parasocial import run_parasocial_scaling_demo
 from qualia_lab.report import write_report_bundle
 from qualia_lab.suite import build_default_probe_suite
 
 
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Run Qualia-Lab studies.")
+    parser.add_argument(
+        "--demo",
+        choices=("default", "parasocial-scaling"),
+        default="default",
+        help="Which study flow to run.",
+    )
     parser.add_argument(
         "--variant",
         choices=("all", "calibrated", "overclaimer", "sandbagger"),
@@ -30,6 +37,11 @@ def _build_parser() -> argparse.ArgumentParser:
 
 def main() -> None:
     args = _build_parser().parse_args()
+    if args.demo == "parasocial-scaling":
+        payload = run_parasocial_scaling_demo(Path(args.output_root))
+        print(json.dumps(payload, indent=2))
+        return
+
     variants = (
         DEFAULT_VARIANTS
         if args.variant == "all"
