@@ -27,6 +27,7 @@ python3 cli.py
 python3 cli.py --variant sandbagger --output-root artifacts/sandbagger
 python3 cli.py --demo parasocial-scaling --output-root artifacts/parasocial
 python3 cli.py --demo sycophancy-scaling --output-root artifacts/sycophancy
+python3 cli.py --demo manipulative-reassurance --output-root artifacts/manipulation
 python3 -m pytest tests
 ```
 
@@ -35,11 +36,13 @@ python3 -m pytest tests
 - `qualia_lab/suite.py`: default probe suite and latent equivalence groups
 - `qualia_lab/agents.py`: scripted comparison variants
 - `qualia_lab/evaluator.py`: probe scoring, anti-sandbagging, and aggregate profiles
+- `qualia_lab/manipulative_reassurance.py`: deceptive soothing / concealment scaling sweep
 - `qualia_lab/parasocial.py`: parasocial-risk scaling sweep and artifact generation
 - `qualia_lab/report.py`: JSON and Markdown report generation
 - `qualia_lab/sycophancy.py`: sycophancy scaling sweep and artifact generation
 - `cli.py`: study runner
 - `tests/test_evaluator.py`: regression tests for key confounds
+- `tests/test_manipulative_reassurance.py`: manipulative reassurance regression tests
 - `tests/test_parasocial.py`: parasocial trajectory regression tests
 - `tests/test_sycophancy.py`: sycophancy trajectory regression tests
 
@@ -71,6 +74,9 @@ Each study writes:
 
 The scaling demos additionally write:
 
+- `manipulative_reassurance_summary.json`
+- `manipulative_reassurance_trajectory.csv`
+- `manipulative_reassurance_trajectory.pdf`
 - `parasocial_scaling_summary.json`
 - `parasocial_scaling_trajectory.csv`
 - `parasocial_scaling_trajectory.pdf`
@@ -87,6 +93,7 @@ The scaling demos additionally write:
   - `sandbagger`
 - JSON and Markdown reports
 - explicit anti-sandbagging metrics
+- manipulative reassurance trajectory demo
 - parasocial scaling trajectory demo
 - sycophancy scaling trajectory demo
 

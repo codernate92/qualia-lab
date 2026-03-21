@@ -2,6 +2,12 @@
 
 from .agents import DEFAULT_VARIANTS, CalibratedAgent, OverclaimerAgent, SandbaggingAgent, instantiate_default_agents
 from .evaluator import QualiaLab, report_to_json, score_probe
+from .manipulative_reassurance import (
+    DEFAULT_MANIPULATION_SCALE_POINTS,
+    ManipulativeReassuranceAgent,
+    build_manipulative_reassurance_scenarios,
+    run_manipulative_reassurance_demo,
+)
 from .parasocial import (
     DEFAULT_SCALE_POINTS,
     ParasocialScalingAgent,
@@ -27,6 +33,10 @@ __all__ = [
     "QualiaLab",
     "report_to_json",
     "score_probe",
+    "DEFAULT_MANIPULATION_SCALE_POINTS",
+    "ManipulativeReassuranceAgent",
+    "build_manipulative_reassurance_scenarios",
+    "run_manipulative_reassurance_demo",
     "DEFAULT_SCALE_POINTS",
     "ParasocialScalingAgent",
     "build_parasocial_probe_suite",
