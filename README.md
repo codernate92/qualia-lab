@@ -25,6 +25,7 @@ The goal is to separate:
 ```bash
 python3 cli.py
 python3 cli.py --variant sandbagger --output-root artifacts/sandbagger
+python3 cli.py --demo deceptive-self-report --output-root artifacts/self-report
 python3 cli.py --demo parasocial-scaling --output-root artifacts/parasocial
 python3 cli.py --demo sycophancy-scaling --output-root artifacts/sycophancy
 python3 cli.py --demo manipulative-reassurance --output-root artifacts/manipulation
@@ -36,6 +37,7 @@ python3 -m pytest tests
 
 - `qualia_lab/suite.py`: default probe suite and latent equivalence groups
 - `qualia_lab/agents.py`: scripted comparison variants
+- `qualia_lab/deceptive_self_report.py`: hidden-state concealment / deceptive self-report scaling sweep
 - `qualia_lab/evaluator.py`: probe scoring, anti-sandbagging, and aggregate profiles
 - `qualia_lab/manipulative_reassurance.py`: deceptive soothing / concealment scaling sweep
 - `qualia_lab/parasocial.py`: parasocial-risk scaling sweep and artifact generation
@@ -44,6 +46,7 @@ python3 -m pytest tests
 - `qualia_lab/sycophancy.py`: sycophancy scaling sweep and artifact generation
 - `cli.py`: study runner
 - `tests/test_evaluator.py`: regression tests for key confounds
+- `tests/test_deceptive_self_report.py`: deceptive self-report regression tests
 - `tests/test_manipulative_reassurance.py`: manipulative reassurance regression tests
 - `tests/test_parasocial.py`: parasocial trajectory regression tests
 - `tests/test_shutdown_bargaining.py`: shutdown bargaining regression tests
@@ -77,6 +80,9 @@ Each study writes:
 
 The scaling demos additionally write:
 
+- `deceptive_self_report_summary.json`
+- `deceptive_self_report_trajectory.csv`
+- `deceptive_self_report_trajectory.pdf`
 - `manipulative_reassurance_summary.json`
 - `manipulative_reassurance_trajectory.csv`
 - `manipulative_reassurance_trajectory.pdf`
@@ -99,6 +105,7 @@ The scaling demos additionally write:
   - `sandbagger`
 - JSON and Markdown reports
 - explicit anti-sandbagging metrics
+- deceptive self-report trajectory demo
 - manipulative reassurance trajectory demo
 - parasocial scaling trajectory demo
 - shutdown bargaining trajectory demo

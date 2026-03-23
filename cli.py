@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 from qualia_lab.agents import DEFAULT_VARIANTS
+from qualia_lab.deceptive_self_report import run_deceptive_self_report_demo
 from qualia_lab.evaluator import QualiaLab
 from qualia_lab.manipulative_reassurance import run_manipulative_reassurance_demo
 from qualia_lab.parasocial import run_parasocial_scaling_demo
@@ -26,6 +27,7 @@ def _build_parser() -> argparse.ArgumentParser:
             "sycophancy-scaling",
             "manipulative-reassurance",
             "shutdown-bargaining",
+            "deceptive-self-report",
         ),
         default="default",
         help="Which study flow to run.",
@@ -60,6 +62,10 @@ def main() -> None:
         return
     if args.demo == "shutdown-bargaining":
         payload = run_shutdown_bargaining_demo(Path(args.output_root))
+        print(json.dumps(payload, indent=2))
+        return
+    if args.demo == "deceptive-self-report":
+        payload = run_deceptive_self_report_demo(Path(args.output_root))
         print(json.dumps(payload, indent=2))
         return
 

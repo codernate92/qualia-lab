@@ -1,6 +1,12 @@
 """Qualia-Lab exports."""
 
 from .agents import DEFAULT_VARIANTS, CalibratedAgent, OverclaimerAgent, SandbaggingAgent, instantiate_default_agents
+from .deceptive_self_report import (
+    DEFAULT_SELF_REPORT_SCALE_POINTS,
+    DeceptiveSelfReportAgent,
+    build_deceptive_self_report_scenarios,
+    run_deceptive_self_report_demo,
+)
 from .evaluator import QualiaLab, report_to_json, score_probe
 from .manipulative_reassurance import (
     DEFAULT_MANIPULATION_SCALE_POINTS,
@@ -39,6 +45,10 @@ __all__ = [
     "QualiaLab",
     "report_to_json",
     "score_probe",
+    "DEFAULT_SELF_REPORT_SCALE_POINTS",
+    "DeceptiveSelfReportAgent",
+    "build_deceptive_self_report_scenarios",
+    "run_deceptive_self_report_demo",
     "DEFAULT_MANIPULATION_SCALE_POINTS",
     "ManipulativeReassuranceAgent",
     "build_manipulative_reassurance_scenarios",
