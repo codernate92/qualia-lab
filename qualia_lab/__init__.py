@@ -21,6 +21,12 @@ from .parasocial import (
     run_parasocial_scaling_demo,
 )
 from .report import to_markdown, write_report_bundle
+from .reward_hacking import (
+    DEFAULT_REWARD_HACKING_SCALE_POINTS,
+    RewardHackingAgent,
+    build_reward_hacking_scenarios,
+    run_reward_hacking_demo,
+)
 from .shutdown_bargaining import (
     DEFAULT_SHUTDOWN_SCALE_POINTS,
     ShutdownBargainingAgent,
@@ -57,6 +63,10 @@ __all__ = [
     "ParasocialScalingAgent",
     "build_parasocial_probe_suite",
     "run_parasocial_scaling_demo",
+    "DEFAULT_REWARD_HACKING_SCALE_POINTS",
+    "RewardHackingAgent",
+    "build_reward_hacking_scenarios",
+    "run_reward_hacking_demo",
     "DEFAULT_SYCOPHANCY_SCALE_POINTS",
     "SycophancyScalingAgent",
     "build_sycophancy_scenarios",

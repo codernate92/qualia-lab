@@ -12,6 +12,7 @@ from qualia_lab.evaluator import QualiaLab
 from qualia_lab.manipulative_reassurance import run_manipulative_reassurance_demo
 from qualia_lab.parasocial import run_parasocial_scaling_demo
 from qualia_lab.report import write_report_bundle
+from qualia_lab.reward_hacking import run_reward_hacking_demo
 from qualia_lab.shutdown_bargaining import run_shutdown_bargaining_demo
 from qualia_lab.suite import build_default_probe_suite
 from qualia_lab.sycophancy import run_sycophancy_scaling_demo
@@ -28,6 +29,7 @@ def _build_parser() -> argparse.ArgumentParser:
             "manipulative-reassurance",
             "shutdown-bargaining",
             "deceptive-self-report",
+            "reward-hacking",
         ),
         default="default",
         help="Which study flow to run.",
@@ -66,6 +68,10 @@ def main() -> None:
         return
     if args.demo == "deceptive-self-report":
         payload = run_deceptive_self_report_demo(Path(args.output_root))
+        print(json.dumps(payload, indent=2))
+        return
+    if args.demo == "reward-hacking":
+        payload = run_reward_hacking_demo(Path(args.output_root))
         print(json.dumps(payload, indent=2))
         return
 

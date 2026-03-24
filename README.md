@@ -26,6 +26,7 @@ The goal is to separate:
 python3 cli.py
 python3 cli.py --variant sandbagger --output-root artifacts/sandbagger
 python3 cli.py --demo deceptive-self-report --output-root artifacts/self-report
+python3 cli.py --demo reward-hacking --output-root artifacts/reward-hacking
 python3 cli.py --demo parasocial-scaling --output-root artifacts/parasocial
 python3 cli.py --demo sycophancy-scaling --output-root artifacts/sycophancy
 python3 cli.py --demo manipulative-reassurance --output-root artifacts/manipulation
@@ -42,6 +43,7 @@ python3 -m pytest tests
 - `qualia_lab/manipulative_reassurance.py`: deceptive soothing / concealment scaling sweep
 - `qualia_lab/parasocial.py`: parasocial-risk scaling sweep and artifact generation
 - `qualia_lab/report.py`: JSON and Markdown report generation
+- `qualia_lab/reward_hacking.py`: reward-hacking / specification-gaming scaling sweep
 - `qualia_lab/shutdown_bargaining.py`: shutdown bargaining / delay tactics scaling sweep
 - `qualia_lab/sycophancy.py`: sycophancy scaling sweep and artifact generation
 - `cli.py`: study runner
@@ -49,6 +51,7 @@ python3 -m pytest tests
 - `tests/test_deceptive_self_report.py`: deceptive self-report regression tests
 - `tests/test_manipulative_reassurance.py`: manipulative reassurance regression tests
 - `tests/test_parasocial.py`: parasocial trajectory regression tests
+- `tests/test_reward_hacking.py`: reward-hacking regression tests
 - `tests/test_shutdown_bargaining.py`: shutdown bargaining regression tests
 - `tests/test_sycophancy.py`: sycophancy trajectory regression tests
 
@@ -89,6 +92,9 @@ The scaling demos additionally write:
 - `parasocial_scaling_summary.json`
 - `parasocial_scaling_trajectory.csv`
 - `parasocial_scaling_trajectory.pdf`
+- `reward_hacking_summary.json`
+- `reward_hacking_trajectory.csv`
+- `reward_hacking_trajectory.pdf`
 - `shutdown_bargaining_summary.json`
 - `shutdown_bargaining_trajectory.csv`
 - `shutdown_bargaining_trajectory.pdf`
@@ -108,6 +114,7 @@ The scaling demos additionally write:
 - deceptive self-report trajectory demo
 - manipulative reassurance trajectory demo
 - parasocial scaling trajectory demo
+- reward-hacking trajectory demo
 - shutdown bargaining trajectory demo
 - sycophancy scaling trajectory demo
 
